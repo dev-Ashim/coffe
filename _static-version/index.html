@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sol. &amp; Bean Coffee House — Coffee · Bites · Conversations</title>
+  <meta name="description" content="Sol. & Bean Coffee House, B1/1 Vishesh Khand, Gomti Nagar, Lucknow — specialty coffee, fresh bites and good conversations.">
+  <link rel="icon" href="assets/logo-cup.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;500;700;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="Sol. & Bean home">
+      <img src="assets/logo-cup.png" alt="" width="34" height="45">
+      <span>Sol. &amp; Bean</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#story">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#space">The Space</a>
+      <a href="#events">Happenings</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a href="#visit" class="btn btn--sm nav__cta">Find Us</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="hero__sun" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="eyebrow reveal">Coffee House · Gomti Nagar, Lucknow</p>
+        <h1 class="hero__title reveal">
+          <span>Coffee.</span>
+          <span>Bites.</span>
+          <span class="outline">Conversations.</span>
+        </h1>
+        <p class="hero__lede reveal">Small-batch coffee, fresh bites from the kitchen, and a table that's always
+          worth staying a little longer at.</p>
+        <div class="hero__actions reveal">
+          <a href="#menu" class="btn">Explore the Menu</a>
+          <a href="#visit" class="btn btn--ghost">Plan a Visit</a>
+        </div>
+      </div>
+      <div class="hero__badge" aria-hidden="true">
+        <img src="assets/logo-badge.png" alt="">
+      </div>
+      <a href="#story" class="hero__scroll" aria-label="Scroll down">Scroll</a>
+    </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Espresso</span><i>✦</i><span>Cold Brew</span><i>✦</i><span>Fresh Bakes</span><i>✦</i>
+        <span>Pour Over</span><i>✦</i><span>All-Day Bites</span><i>✦</i><span>Good Company</span><i>✦</i>
+        <span>Espresso</span><i>✦</i><span>Cold Brew</span><i>✦</i><span>Fresh Bakes</span><i>✦</i>
+        <span>Pour Over</span><i>✦</i><span>All-Day Bites</span><i>✦</i><span>Good Company</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ========== STORY ========== -->
+    <section class="story section" id="story">
+      <div class="story__mark reveal">
+        <img src="assets/logo-cup.png" alt="Sol. & Bean cup mark">
+      </div>
+      <div class="story__copy">
+        <p class="eyebrow reveal">Our Story</p>
+        <h2 class="h2 reveal">Sun in the cup,<br>bean at the heart.</h2>
+        <p class="reveal"><strong>Sol</strong> is the sun — the warmth, the morning light, the people who walk in.
+          <strong>Bean</strong> is the craft — sourced with care, roasted with patience, brewed with intent.
+          Put them together and you get a coffee house built for slow mornings and long conversations.</p>
+        <p class="reveal">We pull every shot like it matters, bake in small batches, and keep the playlist low enough
+          for you to hear the person across the table.</p>
+        <ul class="stats reveal">
+          <li><b>100%</b><span>Arabica</span></li>
+          <li><b>Daily</b><span>Fresh bakes</span></li>
+          <li><b>∞</b><span>Conversations</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== MENU ========== -->
+    <section class="menu section" id="menu">
+      <div class="section__head">
+        <p class="eyebrow reveal">The Menu</p>
+        <h2 class="h2 reveal">Brewed &amp; baked<br>for every hour.</h2>
+      </div>
+
+      <div class="tabs reveal" role="tablist">
+        <button class="tab is-active" role="tab" data-tab="hot" aria-selected="true">Hot Coffee</button>
+        <button class="tab" role="tab" data-tab="cold" aria-selected="false">Cold &amp; Iced</button>
+        <button class="tab" role="tab" data-tab="bites" aria-selected="false">Bites</button>
+        <button class="tab" role="tab" data-tab="sweet" aria-selected="false">Sweet Things</button>
+      </div>
+
+      <!-- Edit items and prices below -->
+      <div class="menu__panel is-active" data-panel="hot" role="tabpanel">
+        <article class="item"><h3>Espresso</h3><span class="dots"></span><b>₹140</b><p>Double shot, house blend, bright and chocolatey.</p></article>
+        <article class="item"><h3>Americano</h3><span class="dots"></span><b>₹170</b><p>Espresso lengthened with hot water.</p></article>
+        <article class="item"><h3>Cappuccino</h3><span class="dots"></span><b>₹210</b><p>Equal parts espresso, steamed milk and velvet foam.</p></article>
+        <article class="item"><h3>Flat White</h3><span class="dots"></span><b>₹230</b><p>Ristretto with silky micro-foam.</p></article>
+        <article class="item"><h3>Café Latte</h3><span class="dots"></span><b>₹220</b><p>Mellow, milky, endlessly comforting.</p></article>
+        <article class="item"><h3>Sol Mocha</h3><span class="dots"></span><b>₹260</b><p>Espresso, dark chocolate and a pinch of sea salt.</p></article>
+        <article class="item"><h3>Pour Over</h3><span class="dots"></span><b>₹280</b><p>Single-origin, hand-brewed. Ask what's on today.</p></article>
+        <article class="item"><h3>Masala Chai</h3><span class="dots"></span><b>₹150</b><p>Slow-simmered with whole spices.</p></article>
+      </div>
+
+      <div class="menu__panel" data-panel="cold" role="tabpanel">
+        <article class="item"><h3>Classic Cold Brew</h3><span class="dots"></span><b>₹240</b><p>Steeped 18 hours. Smooth, low-acid, bold.</p></article>
+        <article class="item"><h3>Iced Latte</h3><span class="dots"></span><b>₹230</b><p>Espresso over cold milk and ice.</p></article>
+        <article class="item"><h3>Vietnamese Iced</h3><span class="dots"></span><b>₹250</b><p>Strong brew with condensed milk.</p></article>
+        <article class="item"><h3>Espresso Tonic</h3><span class="dots"></span><b>₹260</b><p>Tonic, citrus and a floating shot.</p></article>
+        <article class="item"><h3>Bean Frappé</h3><span class="dots"></span><b>₹270</b><p>Blended coffee, cream and caramel drizzle.</p></article>
+        <article class="item"><h3>Sunrise Cooler</h3><span class="dots"></span><b>₹220</b><p>Orange, cold brew and honey — our signature.</p></article>
+      </div>
+
+      <div class="menu__panel" data-panel="bites" role="tabpanel">
+        <article class="item"><h3>Butter Croissant</h3><span class="dots"></span><b>₹180</b><p>Flaky, golden, baked every morning.</p></article>
+        <article class="item"><h3>Avocado Toast</h3><span class="dots"></span><b>₹320</b><p>Sourdough, smashed avo, chilli flakes, lime.</p></article>
+        <article class="item"><h3>Pesto Grilled Sandwich</h3><span class="dots"></span><b>₹290</b><p>Basil pesto, mozzarella, roasted veggies.</p></article>
+        <article class="item"><h3>Chicken Club</h3><span class="dots"></span><b>₹340</b><p>Triple-decker with herbed mayo.</p></article>
+        <article class="item"><h3>Shakshuka</h3><span class="dots"></span><b>₹350</b><p>Eggs in spiced tomato, served with bread.</p></article>
+        <article class="item"><h3>Loaded Fries</h3><span class="dots"></span><b>₹240</b><p>Peri-peri dust, cheese sauce, spring onion.</p></article>
+      </div>
+
+      <div class="menu__panel" data-panel="sweet" role="tabpanel">
+        <article class="item"><h3>Basque Cheesecake</h3><span class="dots"></span><b>₹290</b><p>Burnt top, creamy centre.</p></article>
+        <article class="item"><h3>Tiramisu Jar</h3><span class="dots"></span><b>₹270</b><p>Espresso-soaked, mascarpone, cocoa.</p></article>
+        <article class="item"><h3>Brownie</h3><span class="dots"></span><b>₹190</b><p>Fudgy, dark, a little gooey.</p></article>
+        <article class="item"><h3>Cinnamon Roll</h3><span class="dots"></span><b>₹210</b><p>Glazed and warm from the oven.</p></article>
+        <article class="item"><h3>Affogato</h3><span class="dots"></span><b>₹240</b><p>Vanilla gelato drowned in espresso.</p></article>
+      </div>
+
+      <p class="menu__note reveal">Prices inclusive of taxes. Ask us about plant-based milk and today's specials.</p>
+    </section>
+
+    <!-- ========== SPACE / GALLERY ========== -->
+    <section class="space section" id="space">
+      <div class="section__head">
+        <p class="eyebrow reveal">The Space</p>
+        <h2 class="h2 reveal">Come for the coffee.<br>Stay for the light.</h2>
+      </div>
+      <!-- Replace each .tile with <img src="assets/your-photo.jpg" alt="..."> or set a background-image -->
+      <div class="gallery">
+        <figure class="tile tile--tall reveal"><span>The Bar</span></figure>
+        <figure class="tile reveal"><span>Morning Light</span></figure>
+        <figure class="tile reveal"><span>Fresh Bakes</span></figure>
+        <figure class="tile tile--wide reveal"><span>The Long Table</span></figure>
+        <figure class="tile reveal"><span>Latte Art</span></figure>
+      </div>
+    </section>
+
+    <!-- ========== HAPPENINGS ========== -->
+    <section class="events section" id="events">
+      <div class="section__head">
+        <p class="eyebrow reveal">Happenings</p>
+        <h2 class="h2 reveal">More than a cup.</h2>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card__num">01</span>
+          <h3>Brew Workshops</h3>
+          <p>Learn pour-over, AeroPress and milk steaming from our baristas. Small groups, lots of tasting.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">02</span>
+          <h3>Open Mic Evenings</h3>
+          <p>Poetry, acoustic sets and stories. Bring a friend — or bring a song.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__num">03</span>
+          <h3>Private Gatherings</h3>
+          <p>Birthdays, book clubs, team catch-ups. Book a corner and we'll take care of the rest.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== VISIT ========== -->
+    <section class="visit section" id="visit">
+      <div class="visit__info">
+        <p class="eyebrow reveal">Visit Us</p>
+        <h2 class="h2 reveal">Pull up a chair.</h2>
+        <div class="visit__grid reveal">
+          <div>
+            <h4>Address</h4>
+            <p>B1/1, Vishesh Khand<br>Gomti Nagar, Lucknow<br>Uttar Pradesh — 226010</p>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon – Fri · 8:00 am – 11:00 pm<br>Sat – Sun · 9:00 am – 11:30 pm</p>
+          </div>
+          <div>
+            <h4>Say Hello</h4>
+            <!-- TODO: replace with your real phone / email -->
+            <p><a href="tel:+910000000000">+91 00000 00000</a><br><a href="mailto:hello@solandbean.com">hello@solandbean.com</a></p>
+          </div>
+          <div>
+            <h4>Follow</h4>
+            <p><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.zomato.com/" target="_blank" rel="noopener">Order on Zomato</a></p>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=26.86117172241211,81.01394653320312" target="_blank" rel="noopener" class="btn reveal">Get Directions</a>
+      </div>
+      <div class="visit__media">
+        <figure class="visit__photo reveal">
+          <img src="assets/storefront.jpg" alt="Sol. & Bean Coffee House storefront" loading="lazy" width="1450" height="1085">
+          <figcaption>Look for the cream signboard</figcaption>
+        </figure>
+        <div class="visit__map reveal">
+          <iframe title="Sol. & Bean on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=26.86117172241211,81.01394653320312&z=17&hl=en&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <img class="footer__wordmark" src="assets/logo-wordmark.png" alt="Sol. & Bean Coffee House">
+    <nav class="footer__links">
+      <a href="#story">Story</a><a href="#menu">Menu</a><a href="#space">Space</a><a href="#events">Happenings</a><a href="#visit">Visit</a>
+    </nav>
+    <p class="footer__addr"><span lang="hi">सोल. &amp; बीन</span> · B1/1, Vishesh Khand, Gomti Nagar, Lucknow 226010</p>
+    <p class="footer__copy">© <span id="year"></span> Sol. &amp; Bean Coffee House. Made with warmth.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
