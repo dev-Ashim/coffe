@@ -24,6 +24,18 @@ export default function Footer() {
       <p className="footer__copy">
         © {new Date().getFullYear()} {site.fullName}. Made with warmth.
       </p>
+      <div className="footer__credit">
+        <span className="footer__credit-label">Powered by</span>
+        <a
+          className="footer__credit-logo"
+          href="https://upgrate.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Upgrate — visit official website"
+        >
+          <img src="/assets/upgrate-logo.png" alt="Upgrate" width="461" height="176" loading="lazy" />
+        </a>
+      </div>
     </footer>
   );
 }

@@ -25,9 +25,22 @@ export default function MenuTabs() {
 
       {/* key forces the fade-in animation to replay on tab change */}
       <div className="menu__panel is-active" role="tabpanel" key={active}>
-        {category.items.map((item) => (
-          <MenuItem key={item.name} {...item} />
-        ))}
+        {category.groups ? (
+          category.groups.map((group) => (
+            <section className="menu__group" key={group.label}>
+              <h2>{group.label}</h2>
+              <div className="menu__group-grid">
+                {group.items.map((item) => (
+                  <MenuItem key={item.name} {...item} />
+                ))}
+              </div>
+            </section>
+          ))
+        ) : (
+          category.items.map((item) => (
+            <MenuItem key={item.name} {...item} />
+          ))
+        )}
       </div>
     </>
   );

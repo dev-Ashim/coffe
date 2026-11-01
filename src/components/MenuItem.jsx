@@ -3,7 +3,7 @@ export default function MenuItem({ name, price, desc }) {
     <article className="item">
       <h3>{name}</h3>
       <span className="dots" />
-      <b>₹{price}</b>
+      <b>{price == null ? "—" : `₹${price}`}</b>
       <p>{desc}</p>
     </article>
   );

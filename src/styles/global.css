@@ -318,6 +318,19 @@ body::after {
   row-gap: 8px;
 }
 .menu__panel.is-active { display: grid; animation: fade .5s ease; }
+.menu__group { grid-column: 1 / -1; }
+.menu__group h2 {
+  margin: 8px 0 6px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid rgba(116,57,27,.28);
+  color: var(--brown);
+  font: 400 clamp(26px, 3vw, 36px)/1.1 Georgia, serif;
+}
+.menu__group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(32px, 6vw, 96px);
+}
 @keyframes fade { from { opacity: 0; transform: translateY(12px); } }
 
 .item {
@@ -469,6 +482,32 @@ body::after {
 .footer__insta:hover { background: var(--brown); border-color: var(--brown); }
 .footer__addr { margin: 0; font-size: 14px; letter-spacing: .06em; color: var(--cream-dim); }
 .footer__copy { margin: 0; font-size: 13px; color: var(--cream-dim); opacity: .7; }
+.footer__credit {
+  width: 100%; max-width: 1200px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  display: flex; align-items: flex-end; justify-content: center; gap: 18px; flex-wrap: wrap;
+}
+/* the arrow makes the logo top-heavy — line the label up with the "upgrate" word, not the image centre */
+.footer__credit-label {
+  padding-bottom: 12px;
+  font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--cream-dim);
+}
+.footer__credit-logo {
+  display: block;
+  transition: transform .35s ease;
+}
+.footer__credit-logo img {
+  display: block; width: 140px; height: auto;
+  filter: none;
+  transition: filter .35s ease;
+}
+.footer__credit-logo:hover,
+.footer__credit-logo:focus-visible { transform: translateY(-3px); }
+.footer__credit-logo:hover img,
+.footer__credit-logo:focus-visible img {
+  filter: none;
+}
 
 /* ---------- reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
@@ -494,6 +533,7 @@ body::after {
   .story__mark img { width: 28%; }
   .cards { grid-template-columns: 1fr; }
   .menu__panel { grid-template-columns: 1fr; }
+  .menu__group-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; }
   .tile--wide { grid-column: span 2; }
 }
