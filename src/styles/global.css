@@ -486,19 +486,22 @@ body::after {
   width: 100%; max-width: 1200px;
   padding-top: 28px;
   border-top: 1px solid var(--line);
-  display: flex; align-items: flex-end; justify-content: center; gap: 18px; flex-wrap: wrap;
+  display: flex; align-items: flex-end; justify-content: center; gap: 14px; flex-wrap: wrap;
 }
 /* the arrow makes the logo top-heavy — line the label up with the "upgrate" word, not the image centre */
 .footer__credit-label {
-  padding-bottom: 12px;
-  font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--cream-dim);
+  padding-bottom: 5px;
+  font-size: 7px
+  ; letter-spacing: .28em;
+   text-transform: uppercase; 
+  color: var(--cream-dim);
 }
 .footer__credit-logo {
   display: block;
   transition: transform .35s ease;
 }
 .footer__credit-logo img {
-  display: block; width: 140px; height: auto;
+  display: block; width: 50px; height: auto;
   filter: none;
   transition: filter .35s ease;
 }

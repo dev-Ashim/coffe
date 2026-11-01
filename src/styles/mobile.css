@@ -97,9 +97,9 @@
     scroll-padding-inline: var(--gutter);
   }
   .tabs::-webkit-scrollbar { display: none; }
-  .tab { flex: none; scroll-snap-align: start; }
+  .tab { flex: none; scroll-snap-align: start; }                     
 
-  .hero { min-height: auto; padding-top: 130px; }
+  .hero { min-height: auto; padding-top: 130px; }                    
   .hero__badge { top: 38%; }
   .visit__map, .visit__map iframe { min-height: 260px; }
 }
