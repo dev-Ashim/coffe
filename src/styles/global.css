@@ -311,6 +311,19 @@ body::after {
 .tab:hover { background: rgba(5,6,8,.08); }
 .tab.is-active { background: var(--ink); color: var(--cream); }
 
+/* sliding pill — takes over the active background once measured */
+.tabs { position: relative; }
+.tabs__pill {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--ink);
+  transition: left .5s cubic-bezier(.65,0,.25,1), top .5s cubic-bezier(.65,0,.25,1), width .5s cubic-bezier(.65,0,.25,1);
+}
+.tabs.has-pill .tab { position: relative; z-index: 1; transition: color .35s ease, transform .25s ease; }
+.tabs.has-pill .tab.is-active { background: transparent; }
+.tabs.has-pill .tab:hover:not(.is-active) { transform: translateY(-2px); }
+.tab:active { transform: scale(.96); }
+
 .menu__panel {
   display: none;
   grid-template-columns: repeat(2, 1fr);
@@ -350,6 +363,90 @@ body::after {
 .item .dots { border-bottom: 1.5px dotted rgba(5,6,8,.35); transform: translateY(-5px); }
 .item b { font: 500 22px/1 var(--display); }
 .item p { grid-column: 1 / -1; margin: 0; font-size: 15px; color: #6b5446; }
+.item__tag {
+  margin-left: 10px;
+  font: 600 12px/1 var(--body);
+  letter-spacing: .14em;
+  color: var(--brown);
+  vertical-align: middle;
+}
+
+.menu__tagline {
+  grid-column: 1 / -1;
+  margin: 0 0 16px;
+  color: var(--brown);
+  font: italic 400 clamp(20px, 2.2vw, 26px)/1.3 Georgia, serif;
+}
+.menu__group-note { margin: 0 0 4px; font-size: 14px; color: #6b5446; }
+.menu__addons { margin-top: 24px; }
+.menu__addons p {
+  display: flex; gap: 16px;
+  margin: 12px 0 0;
+  font-size: 15px; color: #6b5446;
+}
+.menu__addons b { flex: none; color: var(--brown); font-weight: 700; }
+
+/* typed tagline */
+.menu__tagline { min-height: 1.3em; }
+.menu__caret {
+  display: inline-block;
+  width: 2px; height: 1em;
+  margin-left: 3px;
+  background: currentColor;
+  vertical-align: -0.12em;
+  animation: caret 1s steps(1) infinite;
+}
+@keyframes caret { 50% { opacity: 0; } }
+
+/* menu page entrance — content cascades in as it scrolls into view */
+.menu-anim [data-anim] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .6s ease var(--d, 0ms),
+    transform .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms);
+}
+.menu-anim [data-anim].is-in { opacity: 1; transform: none; }
+
+/* group underline draws left to right */
+.menu-anim .menu__group h2 { position: relative; border-bottom-color: transparent; }
+.menu-anim .menu__group h2::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -1.5px;
+  height: 1.5px;
+  background: rgba(116,57,27,.28);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(.2,.7,.2,1) calc(var(--d, 0ms) + 150ms);
+}
+.menu-anim .menu__group h2.is-in::after { transform: scaleX(1); }
+
+/* dotted leader draws toward the price, which then pops in */
+.menu-anim .item .dots {
+  transform: translateY(-5px) scaleX(0);
+  transform-origin: left;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1) calc(var(--d, 0ms) + 200ms);
+}
+.menu-anim .item.is-in .dots { transform: translateY(-5px) scaleX(1); }
+.menu-anim .item b {
+  opacity: 0;
+  transform: scale(.7);
+  transition: opacity .4s ease calc(var(--d, 0ms) + 500ms), transform .5s cubic-bezier(.3,1.6,.5,1) calc(var(--d, 0ms) + 500ms), color .3s ease;
+}
+.menu-anim .item.is-in b { opacity: 1; transform: none; }
+
+/* hover */
+.menu-anim .item h3 { transition: color .3s ease, transform .35s ease; }
+.menu-anim .item:hover h3 { color: var(--brown); transform: translateX(6px); }
+.menu-anim .item:hover b { color: var(--brown); }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 
 .menu__note { margin-top: 40px; font-size: 14px; color: #6b5446; }
 
@@ -490,8 +587,8 @@ body::after {
 }
 /* the arrow makes the logo top-heavy — line the label up with the "upgrate" word, not the image centre */
 .footer__credit-label {
-  padding-bottom: 5px;
-  font-size: 7px
+  padding-bottom: 3px;
+  font-size: 10px
   ; letter-spacing: .28em;
    text-transform: uppercase; 
   color: var(--cream-dim);
@@ -501,7 +598,7 @@ body::after {
   transition: transform .35s ease;
 }
 .footer__credit-logo img {
-  display: block; width: 50px; height: auto;
+  display: block; width: 70px; height: auto;
   filter: none;
   transition: filter .35s ease;
 }
@@ -519,6 +616,10 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+  .menu-anim [data-anim], .menu-anim .item b { opacity: 1; transform: none; }
+  .menu-anim .item .dots { transform: translateY(-5px); }
+  .menu-anim .menu__group h2::after { transform: none; }
+  .menu__caret { display: none; }
 }
 
 /* ---------- responsive ---------- */
