@@ -1,8 +1,25 @@
 // Gallery + happenings content.
 
-// To use real photos, add `src: "/assets/your-photo.jpg"` to a tile.
+// Each tile: `label` (also the alt text), `src`, optional `size` ("tall" | "wide" | "full").
+// The home page shows the first 4 tiles — keep those without a size so they sit in one row.
+const g = (file) => `/assets/gallery/${file}.jpg`;
+
 export const gallery = [
   { label: "The Storefront", src: "/assets/storefront-night.jpg", size: "full" },
+  { label: "The Signboard", src: g("signboard") },
+  { label: "Latte Art", src: g("latte-art") },
+  { label: "Cane Lights", src: g("cane-lights") },
+  { label: "The Long Table", src: g("long-table"), size: "wide" },
+  { label: "Window Seats", src: g("window-seating"), size: "tall" },
+  { label: "Iced Matcha", src: g("matcha") },
+  { label: "Our Mark", src: g("wall-mark") },
+  { label: "Avocado Toast", src: g("avocado-toast"), size: "wide" },
+  { label: "Blueberry Mojito", src: g("blueberry-mojito"), size: "tall" },
+  { label: "Garden Pizza", src: g("pizza") },
+  { label: "Waffle & Ice Cream", src: g("waffle") },
+  { label: "Bean A While", src: g("bean-a-while") },
+  { label: "Iced Latte", src: g("iced-coffee") },
+  { label: "Frozen Cooler", src: g("frozen-cooler") },
 ];
 
 export const happenings = [
@@ -40,3 +57,16 @@ export const faqs = [
 ];
 
 export const marqueeWords = ["Espresso", "Cold Brew", "Fresh Bakes", "Pour Over", "All-Day Bites", "Good Company"];
+
+// Shown in the "On Instagram" section until the live feed is connected
+// (or if Instagram is unreachable). Same shape as /api/instagram posts.
+export const instaFallback = [
+  { kind: "video", video: "/assets/reel.mp4", src: "/assets/reel-poster.jpg", caption: "Now pouring in Vishesh Khand. Coffee, bites, conversations." },
+  { kind: "image", src: g("latte-art"), caption: "Rosetta, every single time." },
+  { kind: "image", src: g("avocado-toast"), caption: "Avocado toast & salsa on sourdough." },
+  { kind: "image", src: g("blueberry-mojito"), caption: "Blueberry mojito for the golden hour." },
+  { kind: "image", src: g("cane-lights"), caption: "Cane lights, warm corners." },
+  { kind: "image", src: g("waffle"), caption: "Waffle, ice cream, chocolate. No notes." },
+  { kind: "image", src: g("matcha"), caption: "Iced matcha over berry." },
+  { kind: "image", src: g("pizza"), caption: "Garden pizza, fresh from the oven." },
+];

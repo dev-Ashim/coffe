@@ -100,7 +100,6 @@
   .tab { flex: none; scroll-snap-align: start; }                     
 
   .hero { min-height: auto; padding-top: 130px; }                    
-  .hero__badge { top: 38%; }
   .visit__map, .visit__map iframe { min-height: 260px; }
 }
 
@@ -115,7 +114,6 @@
   .hero__lede { font-size: 16px; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { justify-content: center; }
-  .hero__badge { width: 95vw; right: -30vw; }
 
   .page-hero { padding-top: 120px; padding-bottom: 48px; }
   .page-hero__title { font-size: clamp(46px, 14vw, 64px); }

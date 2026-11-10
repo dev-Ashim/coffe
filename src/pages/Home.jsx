@@ -6,6 +6,7 @@ import SectionHead from "../components/SectionHead";
 import MenuItem from "../components/MenuItem";
 import Gallery from "../components/Gallery";
 import EventCards from "../components/EventCards";
+import InstaFeed from "../components/InstaFeed";
 import Reveal from "../components/Reveal";
 import OpenStatus from "../components/OpenStatus";
 import { signatures } from "../data/menu";
@@ -42,6 +43,18 @@ export default function Home() {
       <section className="events section">
         <SectionHead eyebrow="Happenings" title="More than a cup." />
         <EventCards />
+      </section>
+
+      <section className="insta section">
+        <SectionHead eyebrow="On Instagram" title={<>Fresh from<br />{site.instagram.handle}</>}>
+          New pours, new plates and the occasional sunset. Follow along.
+        </SectionHead>
+        <InstaFeed />
+        <Reveal className="section__cta">
+          <a href={site.instagram.href} target="_blank" rel="noopener noreferrer" className="btn">
+            Follow {site.instagram.handle}
+          </a>
+        </Reveal>
       </section>
 
       <section className="cta-band section">
