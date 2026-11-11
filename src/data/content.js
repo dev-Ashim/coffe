@@ -1,11 +1,12 @@
 // Gallery + happenings content.
 
-// Each tile: `label` (also the alt text), `src`, optional `size` ("tall" | "wide" | "full").
+// Each tile: `label` (also the alt text), `src`, optional `size` ("tall" | "wide" | "full"),
+// optional `hideLabel` for photos that already carry their own text.
 // The home page shows the first 4 tiles — keep those without a size so they sit in one row.
 const g = (file) => `/assets/gallery/${file}.jpg`;
 
 export const gallery = [
-  { label: "The Storefront", src: "/assets/storefront-night.jpg", size: "full" },
+  { label: "The Storefront", src: "/assets/storefront.jpg", size: "full", hideLabel: true },
   { label: "The Signboard", src: g("signboard") },
   { label: "Latte Art", src: g("latte-art") },
   { label: "Cane Lights", src: g("cane-lights") },

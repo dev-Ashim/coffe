@@ -121,7 +121,7 @@ body::after {
   text-align: center;
   background:
     linear-gradient(rgba(5, 6, 8, .78), rgba(39, 15, 13, .88)),
-    url("/assets/storefront-night.jpg") center 42% / cover;
+    url("/assets/storefront.jpg") center 45% / cover;
 }
 .cta-band .h2 { margin-bottom: 20px; }
 .cta-band__addr { margin: 0 0 28px; color: var(--cream-dim); }
@@ -492,7 +492,15 @@ body::after {
 .tile:nth-child(5) { background-image: radial-gradient(circle at 40% 60%, rgba(238,230,211,.14), transparent 50%), var(--ink-2); }
 .tile--tall { grid-row: span 2; }
 .tile--wide { grid-column: span 2; }
-.tile--full { grid-column: 1 / -1; grid-row: span 2; }
+.tile--full { grid-column: 1 / -1; grid-row: span 3; }
+/* full tiles: whole photo, uncropped, over a blurred copy of itself */
+.tile--full::before {
+  content: ""; position: absolute; inset: -40px;
+  background: var(--tile-bg) center / cover;
+  filter: blur(36px) brightness(.45) saturate(1.2);
+}
+.tile--full img { position: relative; object-fit: contain; object-position: center; }
+.tile--full:hover img { transform: none; }
 .tile img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; transition: transform .8s; }
 .tile:hover img { transform: scale(1.05); }
 .tile span {
@@ -598,7 +606,7 @@ body::after {
   overflow: hidden;
   border: 1px solid var(--line);
 }
-.visit__photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 45%; }
+.visit__photo img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
 .visit__photo figcaption {
   position: absolute; left: 16px; bottom: 16px;
   padding: 8px 16px;
@@ -718,6 +726,7 @@ body::after {
   .gallery { grid-template-columns: 1fr; grid-auto-rows: 240px; }
   .insta__grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .tile--tall { grid-row: auto; }
+  .tile--full { grid-row: span 2; }
   .tile--wide { grid-column: auto; }
   .visit__grid { grid-template-columns: 1fr; }
   .stats { gap: 20px; }

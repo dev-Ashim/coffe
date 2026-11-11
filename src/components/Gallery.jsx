@@ -10,9 +10,11 @@ export default function Gallery({ items = gallery }) {
           key={t.label}
           delay={(i % 3) * 80}
           className={`tile ${t.size ? `tile--${t.size}` : ""}`}
+          // full tiles show the whole photo; this feeds the blurred fill behind it
+          style={t.size === "full" && t.src ? { "--tile-bg": `url("${t.src}")` } : undefined}
         >
           {t.src && <img src={t.src} alt={t.label} loading="lazy" />}
-          <span>{t.label}</span>
+          {!t.hideLabel && <span>{t.label}</span>}
         </Reveal>
       ))}
     </div>

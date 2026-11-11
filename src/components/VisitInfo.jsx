@@ -44,8 +44,7 @@ export function VisitDetails() {
 export function Storefront() {
   return (
     <Reveal as="figure" className="visit__photo">
-      <img src="/assets/storefront-night.jpg" alt={`${site.fullName} storefront at night`} loading="lazy" width="960" height="1280" />
-      <figcaption>Look for the glowing signboard</figcaption>
+      <img src="/assets/storefront.jpg" alt={`${site.fullName} storefront at night, Vishesh Khand, Gomti Nagar, Lucknow`} loading="lazy" width="1254" height="1254" />
     </Reveal>
   );
 }
